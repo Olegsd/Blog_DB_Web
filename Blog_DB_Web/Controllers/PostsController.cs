@@ -17,7 +17,7 @@ namespace Blog_DB_Web.Controllers
         // GET: Posts
         public ActionResult Index()
         {
-            var posts = db.Posts.Include(p => p.User);
+            var posts = db.Posts.Include(p => p.User).OrderBy(p => p.Date);
             return View(posts.ToList());
         }
 
